@@ -1,4 +1,4 @@
 ---
-title: Welcome to my blog
+title: ReDRAW: Adapting World Models with Latent-State Dynamics Residuals
 ---
 
