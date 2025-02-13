@@ -1,207 +1,288 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="ReDRAW: Adapting World Models with Latent-State Dynamics Residuals">
-  <meta name="keywords" content="ReDRAW, DRAW, World Models">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ReDRAW: Adapting World Models with Latent-State Dynamics Residuals</title>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="ReDRAW: Adapting World Models with Latent-State Dynamics Residuals">
+    <meta name="keywords" content="ReDRAW, DRAW, World Models">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ReDRAW: Adapting World Models with Latent-State Dynamics Residuals</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-    gtag('js', new Date());
+        gtag('js', new Date());
 
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
+        gtag('config', 'G-PYVRSFMDRL');
+    </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-<!--   <link rel="icon" href="./static/images/favicon.svg"> -->
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <!--   <link rel="icon" href="./static/images/favicon.svg"> -->
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
 </head>
 <body>
 <section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Adapting World Models<br>with Latent-State Dynamics Residuals</h1>
-          <div class="is-size-5 publication-authors">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">Adapting World Models<br>with Latent-State Dynamics Residuals</h1>
+                    <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a>Anonymous</a></span>
-<!--             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span> -->
-          </div>
+                        <!--             <span class="author-block">
+                                      <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+                                    <span class="author-block">
+                                      <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+                                    <span class="author-block">
+                                      <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+                                    </span>
+                                    <span class="author-block">
+                                      <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+                                    </span>
+                                    <span class="author-block">
+                                      <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+                                    </span>
+                                    <span class="author-block">
+                                      <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
+                                    </span>
+                                    <span class="author-block">
+                                      <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+                                    </span> -->
+                    </div>
 
-<!--           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
-          </div> -->
+                    <!--           <div class="is-size-5 publication-authors">
+                                <span class="author-block"><sup>1</sup>University of Washington,</span>
+                                <span class="author-block"><sup>2</sup>Google Research</span>
+                              </div> -->
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://redraw-research.github.io/project/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-<!--               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span> -->
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="#video-section"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://redraw-research.github.io/project/"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-              <!-- Dataset Link. -->
-<!--               <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a> -->
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- PDF Link. -->
+                            <!--              <span class="link-block">-->
+                            <!--                <a href="https://redraw-research.github.io/project/"-->
+                            <!--                   class="external-link button is-normal is-rounded is-dark">-->
+                            <!--                  <span class="icon">-->
+                            <!--                      <i class="fas fa-file-pdf"></i>-->
+                            <!--                  </span>-->
+                            <!--                  <span>Paper</span>-->
+                            <!--                </a>-->
+                            <!--              </span>-->
+                            <!--               <span class="link-block">
+                                            <a href="https://arxiv.org/abs/2011.12948"
+                                               class="external-link button is-normal is-rounded is-dark">
+                                              <span class="icon">
+                                                  <i class="ai ai-arxiv"></i>
+                                              </span>
+                                              <span>arXiv</span>
+                                            </a>
+                                          </span> -->
+                            <!-- Video Link. -->
+                            <!--              <span class="link-block">-->
+                            <!--                <a href="#video-section"-->
+                            <!--                   class="external-link button is-normal is-rounded is-dark">-->
+                            <!--                  <span class="icon">-->
+                            <!--                      <i class="fab fa-youtube"></i>-->
+                            <!--                  </span>-->
+                            <!--                  <span>Video</span>-->
+                            <!--                </a>-->
+                            <!--              </span>-->
+                            <!-- Code Link. -->
+                            <!--              <span class="link-block">-->
+                            <!--                <a href="https://redraw-research.github.io/project/"-->
+                            <!--                   class="external-link button is-normal is-rounded is-dark">-->
+                            <!--                  <span class="icon">-->
+                            <!--                      <i class="fab fa-github"></i>-->
+                            <!--                  </span>-->
+                            <!--                  <span>Code</span>-->
+                            <!--                  </a>-->
+                            <!--              </span>-->
+                            <!-- Dataset Link. -->
+                            <!--               <span class="link-block">
+                                            <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                                               class="external-link button is-normal is-rounded is-dark">
+                                              <span class="icon">
+                                                  <i class="far fa-images"></i>
+                                              </span>
+                                              <span>Data</span>
+                                              </a> -->
+                        </div>
+
+                    </div>
+                </div>
             </div>
-
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
 <!-- Abstract -->
 <section class="section">
-  <div class="container is-max-desktop">
-      <!-- Abstract. -->
-      <div class="columns is-centered has-text-centered">
-          <div class="column">
-              <h2 class="title is-3">Abstract</h2>
-              <div class="content has-text-justified">
-                  <p style="font-size: 125%">
-                    Simulation-to-reality reinforcement learning (RL) faces the critical challenge of reconciling discrepancies between simulated and real-world dynamics, which can severely degrade agent performance. A promising approach involves learning corrections to simulator forward dynamics represented as a residual error function, however this operation is impractical with high-dimensional states such as images. To overcome this, we propose ReDRAW, a latent-state autoregressive world model pretrained in simulation and calibrated to target environments through residual corrections of latent-state dynamics rather than of explicit observed states. Using this adapted world model, ReDRAW enables RL agents to be optimized with imagined rollouts under corrected dynamics and then deployed in the real world. In multiple vision-based MuJoCo domains and a physical robot visual lane-following task, ReDRAW effectively models changes to dynamics and avoids overfitting in low data regimes where traditional transfer methods fail.
-                  </p>
-              </div>
-          </div>
-      </div>
-  </div>
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p style="font-size: 125%">
+                        Simulation-to-reality reinforcement learning (RL) faces the critical challenge of reconciling discrepancies between simulated and real-world dynamics, which can severely degrade agent performance. A promising approach involves learning corrections to simulator forward dynamics represented as a residual error function, however this operation is impractical with high-dimensional states such as images. To overcome this, we propose ReDRAW, a latent-state autoregressive world model pretrained in simulation and calibrated to target environments through residual corrections of latent-state dynamics rather than of explicit observed states. Using this adapted world model, ReDRAW enables RL agents to be optimized with imagined rollouts under corrected dynamics and then deployed in the real world. In multiple vision-based MuJoCo domains and a physical robot visual lane-following task, ReDRAW effectively models changes to dynamics and avoids overfitting in low data regimes where traditional transfer methods fail.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="section" id="video-section">
-  <div class="container is-max-widescreen">
-      <div class="rows">
-          <div class="rows is-centered ">
-              <div class="row is-full-width">
-                  <h2 class="title is-3"><span
-                          class="dvima">Sim to Real Transfer Experiments</span></h2>
-                  <span style="font-size: 125%">
-                      Fill this out!
-                  </span>
+    <div class="container is-max-widescreen">
+        <div class="rows">
+            <div class="rows is-centered ">
 
-                  <br>
-                  <br>
-                  <br>
+                <div class="row is-full-width">
+                    <img src="static/images/redraw_diagram.svg">
 
-                  <div class="columns">
-                      <!-- No action reversed. -->
-                      <div class="column has-text-left">
-                          <h3 class="title is-5">No Action Reversed</h3>
-                          <video poster="" id="" autoplay controls muted loop height="100%" playbackRate=1.0 style="border-radius: 5px;">
-                            <source src="static/videos/duckiebots_sim_to_real.mp4" type="video/mp4">
-                          </video>
-                          <p style="font-size: 110%">Caption.</p>
-                      </div>
 
-                      <!-- Action reversed. -->
-                      <div class="column has-text-left">
-                          <h3 class="title is-5">Reversing Real Actions</h3>
-                          <video poster="" id="" autoplay controls muted loop height="100%" playbackRate=1.0 style="border-radius: 5px;">
-                            <source src="static/videos/duckiebots_sim_to_real_actions_reversed.mp4" type="video/mp4">
-                          </video>
-                          <p style="font-size: 110%">Caption.</p>
-                      </div>
-                  </div>
-                  
-              </div>
-          </div>
 
-      </div>
-  </div>
+                    <div class="columns"  style="font-size: 110%">
+                        <div class="column has-text-left is-6">
+                            <p>The DRAW world model is trained to encode states into a latent representation, from which states, rewards, terminations, and future latent states are predicted. An RL agent is trained in the world model via synthetic rollouts.</p>
+
+                        </div>
+
+                        <div class="column has-text-left is-6">
+                            <p>World model dynamics can be calibrated to a target environment by training a residual error correction on latent state dynamics predictions, allowing the RL agent to be trained under rectified dynamics.</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <br>
+                <br>
+                <br>
+
+
+                <div class="row is-full-width">
+                    <h2 class="title is-3"><span
+                            class="dvima">Sim to Real Transfer for Duckiebots Lane Following</span></h2>
+                    <div style="font-size: 125%">
+                        <p>
+                            We evaluate ReDRAW in a sim-to-real robotic lane-following task using the Duckietown platform. The agent controls a wheeled robot to navigate a track while staying centered in its lane. To enable sim-to-real transfer, we create a simulated environment in Unreal Engine using a Gaussian splat reconstruction of the robot's surroundings. The simulation approximates real dynamics, though details like precise handling differ from the real robot. We also generalize perception from sim to real by applying image augmentations to training-time encoder inputs.
+                        </p>
+                        <br>
+                        <p> We train our DRAW world model with intrinsically-motivated online exploration in simulation and calibrate its dynamics with ReDRAW on 10K timesteps (17 minutes) of offline human demonstrations, producing a successful agent in the real environment. Notably, ReDRAW does not require real reward labels to adapt.</p>
+
+
+
+
+
+
+
+<!--                        </p>-->
+<!--                        <br>-->
+<!--                        <p>-->
+<!--                            The Duckiebot receives rewards proportional to its projected velocity along the lane-center path-->
+<!--                            but instead incurs penalties when it deviates too far from this path. When moving forward, we also-->
+<!--                            penalize the agent proportionally its yaw velocity to encourage smooth driving. Episodes terminate-->
+<!--                            either when the robot leaves the track, with a large penalty applied, or after 200 steps.-->
+
+<!--                        </p>-->
+<!--                        <br>-->
+
+<!--                        <p>-->
+<!--                            We provide the agent with reward data during simulation pretraining, and we do not provide reward-->
+<!--                            labels in training data collected from the real environment. In order to measure test-time-->
+<!--                            deployment performance, during real evaluation only, we record the robot's location with an HTC-->
+<!--                            Vive motion tracker to measure equivalent simulation rewards, lap times, and the robot's distance-->
+<!--                            from the lane center.-->
+<!--                        </p>-->
+                    </div>
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <div class="columns">
+                        <div class="column has-text-left">
+                            <h3 class="title is-5">Gaussian Splat Digital-Twin Simulation</h3>
+                            <img src="static/images/simulation_track.png">
+                            <div style="display: flex; ">
+                                <p style="width: 70%; text-align: right; font-size: 110%; margin-right: 10px; font-weight: bold;">Sim Image Observation:</p>
+                                <img src="static/images/sim_0025.png" width="30%" height="30%">
+                            </div>
+                        </div>
+
+                        <div class="column has-text-left">
+                            <h3 class="title is-5">Real Robot Environment</h3>
+                            <img src="static/images/duckiebots_track.jpg">
+                            <div style="display: flex; ">
+                                <p style="width: 70%; text-align: right; font-size: 110%; margin-right: 10px; font-weight: bold;">Real Image Observation:</p>
+                                <img src="static/images/real_0194_bright.png" width="30%" height="30%">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <h3 class="title is-5">Transferring from Simulation to Real</h3>
+                    <video poster="" autoplay controls muted loop height="100%" style="border-radius: 5px;">
+                        <source src="static/videos/duckiebots_sim_to_real_medium_quality.mp4" type="video/mp4">
+                    </video>
+                    <p style="font-size: 125%">In the real environment, ReDRAW achieves significantly higher average dense rewards than zero-shot DRAW by training with corrected dynamics and staying close to the lane center. Zero-shot DRAW is able to successfully drive despite never seeing real data but incurs low rewards by veering far from the lane center.</p>
+
+                    <br>
+                    <br>
+                    <br>
+
+
+                    <h3 class="title is-5">Transferring from Simulation to Real with Reversed Real Actions</h3>
+                    <video poster="" autoplay controls muted loop height="100%" style="border-radius: 5px;">
+                        <source src="static/videos/duckiebots_sim_to_real_actions_reversed_medium_quality.mp4" type="video/mp4">
+                    </video>
+                    <p style="font-size: 125%">In a more extreme task, we transfer from sim to a version of the real environment where actions are reversed. ReDRAW is the only method that successfully adapts and completes laps on the real robot. ReDRAW can be effectively used to adapt dynamics from simulation to reality using a limited offline real dataset without rewards, and ReDRAW can also be combined with visual adaptation methods in order to do so.</p>
+
+                    <br>
+                    <br>
+                    <br>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>
 
 <footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <br />
-      <p> Website template borrowed from <a href="https://nerfies.github.io">Nerfies</a>, <a href="https://eureka-research.github.io">Eureka</a>, and <a href="https://vimalabs.github.io/">VIMA</a>.</p>
+    <div class="container">
+        <div class="content has-text-centered">
+            <br />
+            <p> Website template borrowed from <a href="https://nerfies.github.io">Nerfies</a>, <a href="https://eureka-research.github.io">Eureka</a>, and <a href="https://vimalabs.github.io/">VIMA</a>.</p>
+        </div>
     </div>
-  </div>
 </footer>
-  
+
 </body>
 </html>
