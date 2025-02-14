@@ -249,9 +249,18 @@
 
                     <h3 class="title is-5">Transferring from Simulation to Real</h3>
                     <video poster="" autoplay controls muted loop height="100%" style="border-radius: 5px;">
-                        <source src="static/videos/duckiebots_sim_to_real_medium_quality.mp4" type="video/mp4">
+<!--                        &lt;!&ndash; AV1 &ndash;&gt;-->
+<!--                        <source src="static/videos/duckiebots_sim_to_real_medium_av1.mp4"-->
+<!--                                type="video/mp4; codecs=av01">-->
+                        <!-- H.264 -->
+                        <source src="static/videos/duckiebots_sim_to_real_medium_h264.mp4"
+                                type="video/mp4; codecs=avc1.4D401E">
+                        <!-- H.265 (HEVC) -->
+                        <source src="static/videos/duckiebots_sim_to_real_medium_h265.mp4"
+                                type="video/mp4; codecs=hev1">
+                        Your browser does not support the video tag.
                     </video>
-                    <p style="font-size: 125%">In the real environment, ReDRAW achieves significantly higher average dense rewards than zero-shot DRAW by training with corrected dynamics and staying close to the lane center. Zero-shot DRAW is able to successfully drive despite never seeing real data but incurs low rewards by veering far from the lane center.</p>
+                    <p style="font-size: 125%">In the real environment, ReDRAW achieves significantly higher average dense rewards than zero-shot DRAW by training with corrected dynamics and staying close to the lane center. Due to mismatched world-model dynamics, Zero-shot DRAW incurs low rewards by veering far from the lane center.</p>
 
                     <br>
                     <br>
@@ -260,7 +269,16 @@
 
                     <h3 class="title is-5">Transferring from Simulation to Real with Reversed Real Actions</h3>
                     <video poster="" autoplay controls muted loop height="100%" style="border-radius: 5px;">
-                        <source src="static/videos/duckiebots_sim_to_real_actions_reversed_medium_quality.mp4" type="video/mp4">
+<!--                        &lt;!&ndash; AV1 &ndash;&gt;-->
+<!--                        <source src="static/videos/duckiebots_sim_to_real_actions_reversed_medium_av1.mp4"-->
+<!--                                type="video/mp4; codecs=av01">-->
+                        <!-- H.264 -->
+                        <source src="static/videos/duckiebots_sim_to_real_actions_reversed_medium_h264.mp4"
+                                type="video/mp4; codecs=avc1.4D401E">
+                        <!-- H.265 (HEVC) -->
+                        <source src="static/videos/duckiebots_sim_to_real_actions_reversed_medium_h265.mp4"
+                                type="video/mp4; codecs=hev1">
+                        Your browser does not support the video tag.
                     </video>
                     <p style="font-size: 125%">In a more extreme task, we transfer from sim to a version of the real environment where actions are reversed. ReDRAW is the only method that successfully adapts and completes laps on the real robot. ReDRAW can be effectively used to adapt dynamics from simulation to reality using a limited offline real dataset without rewards, and ReDRAW can also be combined with visual adaptation methods in order to do so.</p>
 
