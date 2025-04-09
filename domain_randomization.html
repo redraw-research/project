@@ -175,7 +175,7 @@
                         Dreamer Dyn DR still hallucinates in the unmodified real environment despite learning to drive successfully in simulation. This is likely because the dynamics-randomized simulation still fails to sufficiently capture the distribution of state and action sequences present during real execution, causing out-of-distribution GRU states h.
                     </p>
                     <p>
-                        In the actions-reversed real environment, both DRAW and Dreamer Dyn DR fail to drive. This is because the reversed actions represent an unexpected disparity between simulation and real that was not represented during training.
+                        In the actions-reversed real environment, both DRAW and Dreamer Dyn DR fail to drive because the reversed actions represent an unexpected disparity between simulation and real that was not represented during training.
                     </p>
                     <p>
                         In both of these real environments, despite not having access to configurable simulator physics, ReDRAW is able to use a small amount of real transition data to calibrate its world model and drive with a near-optimal policy.
